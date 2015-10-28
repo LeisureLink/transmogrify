@@ -1,0 +1,46 @@
+{
+  "name": "transmogrify",
+  "version": "1.0.0",
+  "description": "Transforms json objects from one to another in a surprising or magical manner",
+  "main": "index.js",
+  "directories": {
+    "start": "nodemon",
+    "test": "mocha test"
+  },
+  "dependencies": {
+    "assert-plus": "^0.1.5",
+    "blipp": "^2.3.0",
+    "bluebird": "^3.0.1",
+    "boom": "^2.10.0",
+    "code": "^1.5.0",
+    "glue": "^2.4.0",
+    "good": "^6.4.0",
+    "good-console": "^5.1.0",
+    "hapi": "^11.0.2",
+    "hapi-swaggered": "^2.4.1",
+    "hapi-swaggered-ui": "^2.1.1",
+    "inert": "^3.2.0",
+    "joi": "^6.9.1",
+    "vision": "^3.0.0"
+  },
+  "devDependencies": {
+    "chai": "^3.4.0",
+    "mocha": "^2.3.3"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LeisureLink/transmogrify.git"
+  },
+  "keywords": [
+    "translation"
+  ],
+  "author": "Tyler Garlick <tgarlick@leisurelink.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/LeisureLink/transmogrify/issues"
+  },
+  "homepage": "https://github.com/LeisureLink/transmogrify#readme"
+}
