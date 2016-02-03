@@ -1,5 +1,5 @@
 'use strict';
 
-let Chai = require('chai');
+import {expect} from 'code';
 
-global.expect = Chai.expect;
+global.expect = expect;

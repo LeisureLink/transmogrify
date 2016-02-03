@@ -1,9 +1,5 @@
 'use strict';
 
-let server = require('./api');
+require('babel-core/register');
 
-if (!module.parent) {
-  server.start(function () {
-    console.log("Server started", server.info.uri);
-  });
-}
+require('./plugins');

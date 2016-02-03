@@ -3,31 +3,43 @@
   "version": "1.0.0",
   "description": "Transforms json objects from one to another in a surprising or magical manner",
   "main": "index.js",
-  "directories": {
-    "start": "nodemon",
-    "test": "mocha test"
-  },
   "dependencies": {
-    "assert-plus": "^0.1.5",
+    "assert-plus": "^1.0.0",
+    "babel-core": "^6.4.5",
+    "babel-plugin-add-module-exports": "^0.1.2",
+    "babel-polyfill": "^6.3.14",
+    "babel-preset-es2016-node5": "^1.1.2",
     "blipp": "^2.3.0",
-    "bluebird": "^3.0.1",
-    "boom": "^2.10.0",
-    "code": "^1.5.0",
-    "glue": "^2.4.0",
+    "bluebird": "^3.2.1",
+    "boom": "^3.1.2",
+    "code": "^2.0.1",
+    "glue": "^3.1.0",
     "good": "^6.4.0",
-    "good-console": "^5.1.0",
-    "hapi": "^11.0.2",
-    "hapi-swaggered": "^2.4.1",
-    "hapi-swaggered-ui": "^2.1.1",
+    "good-console": "^5.3.0",
+    "hapi": "^13.0.0",
+    "hapi-async-handler": "^1.0.3",
+    "hapi-router": "^3.4.0",
+    "hapi-swaggered": "^2.6.0",
+    "hapi-swaggered-ui": "^2.3.1",
     "inert": "^3.2.0",
-    "joi": "^6.9.1",
-    "vision": "^3.0.0"
+    "joi": "^7.2.3",
+    "jxon": "^1.6.1",
+    "moment": "^2.11.1",
+    "mongojs": "^2.3.0",
+    "newrelic": "^1.25.1",
+    "rejoice": "^3.1.0",
+    "relish": "^0.1.4",
+    "tv": "^5.0.2",
+    "vision": "^4.0.1"
   },
   "devDependencies": {
-    "chai": "^3.4.0",
-    "mocha": "^2.3.3"
+    "babel-core": "^6.4.5",
+    "code": "^2.1.0",
+    "mocha": "^2.4.5",
+    "mochawait": "^2.0.1"
   },
   "scripts": {
+    "start": "nodemon",
     "test": "mocha"
   },
   "repository": {
