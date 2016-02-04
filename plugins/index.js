@@ -26,6 +26,12 @@ server.register([
   require('tv'),
   require('hapi-async-handler'),
   {
+    register: require('hapi-router'),
+    options: {
+      routes: 'plugins/**/routes/**/*'
+    }
+  },
+  {
     register: require('good'),
     options: {
       requestHeaders: true,
@@ -59,40 +65,16 @@ server.register([
   },
   require('./applications'),
   require('./compound'),
-  require('./registrations')
+  require('./registrations'),
+  require('./conversion'),
+  require('./reduce'),
 ], (err) => {
   if (err) throw err;
-  server.start(function () {
+
+  server.start(() => {
     console.log(`Server started at: ${server.info.uri}`);
   });
+
 });
 
 export default server;
-//
-//
-//module.exports = {
-//  connections: [{ port: process.env.PORT || 3000 }],
-//  plugins: {
-//    inert: {},
-//    vision: {},
-//    blipp: {},
-//    'hapi-async-handler': {},
-//    good: {
-//      requestHeaders: true,
-//      reporters: [
-//        {
-//          reporter: 'good-console',
-//          events: { response: '*', log: '*', error: '*' }
-//        }
-//      ]
-//    },
-//    'hapi-router': { routes: '**/routes/*.js' },
-//    'hapi-swaggered': {
-//      info: { title: 'Transmogrify API', version: '0.0.1' }
-//    },
-//    'hapi-swaggered-ui': { title: 'Transmogrify API' },
-//    './applications': {},
-//    './compound': {},
-//    './registrations': {}
-//  }
-//};

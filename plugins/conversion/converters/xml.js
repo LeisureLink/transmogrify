@@ -30,7 +30,8 @@ export default {
    * @param {Boolean} [options.parseValues]
    */
   convert(xml, options = {}) {
-    options.valueKey = options.valueKey || '_value';
+    options.valueKey = options.valueKey || 'value';
+    options.attrPrefix = options.attrPrefix || '';
     options.trueIsEmpty = options.trueIsEmpty || false;
 
     if (!xml || xml.toString().length === 0) {
