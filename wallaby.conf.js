@@ -13,6 +13,7 @@ const GLOBS = {
 
 module.exports = (wallaby) => {
   return {
+
     files: [
       'lib/**/*',
       'test/**/*',
@@ -20,9 +21,9 @@ module.exports = (wallaby) => {
       { pattern: GLOBS.tests, ignore: true },
       { pattern: GLOBS.plugins, ignore: true }
     ],
-    tests: [
-      GLOBS.tests, GLOBS.plugins
-    ],
+
+    tests: [GLOBS.tests, GLOBS.plugins],
+
     env: {
       type: 'node',
       runner: 'node',
@@ -30,9 +31,11 @@ module.exports = (wallaby) => {
         env: 'NODE_ENV=katon;'
       }
     },
+
     bootstrap: () => {
       require('./test/helper');
     },
+
     compilers: {
       '**/*.js': wallaby.compilers.babel(babelConfiguration)
     },

@@ -64,7 +64,6 @@ server.register([
     }
   },
   require('./applications'),
-  require('./compound'),
   require('./registrations'),
   require('./conversion'),
   require('./reduce'),

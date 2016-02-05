@@ -5,12 +5,11 @@ import VM from 'vm';
 const babel = require('babel-core');
 
 const transpile = (code) => {
-  return babel.transform(`(sources) => { ${code} };`, {
+  return babel.transform(code, {
     presets: ['es2016-node5'],
     plugins: ['add-module-exports']
   });
 };
-
 
 export default {
 
@@ -22,6 +21,8 @@ export default {
       '_': require('lodash'),
       trans: require('trans'),
       prop: require('dot-prop'),
+      moment: require('moment'),
+      jsonPtr: require('json-ptr'),
       JSON: {
         parse: require('parse-json'),
         stringify: require('stringify-object')
@@ -30,6 +31,7 @@ export default {
 
     const transpiledCode = transpile(code).code;
     const fn = VM.runInContext(transpiledCode, context);
+
     return await fn(sources);
   }
 }
