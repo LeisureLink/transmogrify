@@ -1,7 +1,7 @@
 'use strict';
 
-let Joi = require('joi');
+import Joi from 'joi';
 
-module.exports = Joi.object({
+export default {
   name: Joi.string().required().min(2).trim().description(`Application's name`)
-});
+};

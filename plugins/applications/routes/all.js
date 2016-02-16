@@ -1,9 +1,9 @@
 'use strict';
 
-let Joi = require('joi');
-let Promise = require('bluebird');
+import Joi from 'joi';
+import Boom from 'boom';
+import Application from '../schemas/application';
 
-let Application = require('../schemas/application');
 
 module.exports = {
   path: '/v1/applications',
@@ -13,17 +13,17 @@ module.exports = {
     description: 'Get applications',
 
     response: {
-      schema: Joi.array().items(Application)
+      schema: Joi.array().items(Joi.object(Application))
     },
 
     handler: {
-      async: Promise.coroutine(function* (request, reply) {
+      async: async (request, reply) => {
         try {
           return reply([]);
         } catch (e) {
           return reply(e);
         }
-      })
+      }
     }
   }
 };

@@ -17,7 +17,7 @@ const server = new Hapi.Server({
 });
 
 const port = process.env.PORT || 3000;
-server.connection({ port });
+server.connection({port});
 
 server.register([
   require('blipp'),
@@ -38,7 +38,7 @@ server.register([
       reporters: [
         {
           reporter: 'good-console',
-          events: { response: '*', log: '*', error: '*' }
+          events: {response: '*', log: '*', error: '*'}
         }
       ]
     }
@@ -70,10 +70,11 @@ server.register([
 ], (err) => {
   if (err) throw err;
 
-  server.start(() => {
-    console.log(`Server started at: ${server.info.uri}`);
-  });
-
+  if (process.env.NODE_ENV !== 'testing') {
+    server.start(() => {
+      console.log(`Server started at: ${server.info.uri}`);
+    });
+  }
 });
 
 export default server;

@@ -18,17 +18,16 @@ module.exports = (wallaby) => {
       'lib/**/*',
       'test/**/*',
       'plugins/**/*',
-      { pattern: GLOBS.tests, ignore: true },
-      { pattern: GLOBS.plugins, ignore: true }
+      {pattern: GLOBS.tests, ignore: true},
+      {pattern: GLOBS.plugins, ignore: true}
     ],
 
     tests: [GLOBS.tests, GLOBS.plugins],
 
     env: {
       type: 'node',
-      runner: 'node',
       params: {
-        env: 'NODE_ENV=katon;'
+        env: 'NODE_ENV=testing;'
       }
     },
 
@@ -38,10 +37,6 @@ module.exports = (wallaby) => {
 
     compilers: {
       '**/*.js': wallaby.compilers.babel(babelConfiguration)
-    },
-    //workers: {
-    //  initial: 1,
-    //  regular: 1
-    //}
+    }
   }
 };
